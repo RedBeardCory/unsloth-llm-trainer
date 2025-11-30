@@ -1,0 +1,28 @@
+[project]
+name = "llama-experiments"
+version = "0.1.0"
+description = "Training project for llama models"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "datasets>=3.2.0",
+    "ruff>=0.14.5",
+    "torch>=2.9.0",
+    "torchvision>=0.24.0",
+    "torchaudio>=2.9.0",
+    "unsloth>=2025.11.3",
+]
+
+# Configure uv to use PyTorch's CUDA index for torch packages
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
+
+[tool.basedpyright]
+reportCallIssue = "warning"

@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Generated training data and models
+training_data.jsonl
+lora_model/
+model_gguf/
+outputs/
+*.gguf
+
+# Unsloth cache
+.cache/
+
+# llama submodule
+llama.cpp/

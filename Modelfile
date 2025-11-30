@@ -1,0 +1,10 @@
+FROM ./codellama-7b.Q4_K_M.gguf
+
+TEMPLATE """User: {{ .Prompt }}
+
+Assistant: {{ .Response }}"""
+
+PARAMETER stop "User:"
+PARAMETER stop "Assistant:"
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
